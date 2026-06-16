@@ -6,7 +6,7 @@
 
 ## 在线 Demo
 
-待部署到 Vercel 后补充链接。
+[https://suitable-ta-assessment.vercel.app](https://suitable-ta-assessment.vercel.app)
 
 ## 项目定位
 
