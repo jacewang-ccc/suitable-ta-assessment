@@ -1,0 +1,10 @@
+.next/
+node_modules/
+dist/
+coverage/
+output/
+.playwright-mcp/
+.env
+.env.local
+_private_docs/
+npm-debug.log*
