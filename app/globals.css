@@ -5420,13 +5420,13 @@ button {
 }
 
 .avatar-at-3 {
-  left: 88%;
-  top: 17%;
+  left: 82%;
+  top: 24%;
 }
 
 .game-avatar img {
-  width: 86px;
-  height: 86px;
+  width: 80px;
+  height: 80px;
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 14px 15px rgba(46, 38, 30, 0.18));
@@ -5434,8 +5434,8 @@ button {
 
 .avatar-bubble {
   position: absolute;
-  left: 52px;
-  top: -12px;
+  left: 47px;
+  top: -8px;
   padding: 3px 7px;
   border-radius: 999px;
   background: #fff;
@@ -6152,6 +6152,27 @@ button {
 .role-passport-card {
   display: grid;
   gap: 12px;
+}
+
+.report-live-switcher {
+  position: relative;
+  top: auto;
+  width: min(760px, 100%);
+  margin: 0 auto 30px;
+}
+
+.report-hero-single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 940px;
+  margin-inline: auto;
+}
+
+.report-hero-single .report-hero-copy {
+  min-height: auto;
+}
+
+.report-hero-single .report-hero-role-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .role-passport-card > span {
@@ -7416,6 +7437,16 @@ button {
     grid-row: span 2;
   }
 
+  .report-hero-single .report-hero-role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-hero-single .report-hero-role-grid a {
+    min-height: 92px;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: center;
+  }
+
   .stage-report-card-head {
     grid-template-columns: 70px minmax(0, 1fr);
   }
@@ -7493,32 +7524,39 @@ button {
 
   .final-type-card {
     min-height: auto;
-    grid-template-columns: 118px minmax(0, 1fr);
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: start;
+    gap: 10px;
+    padding: 18px 16px;
+    overflow: hidden;
   }
 
   .final-type-doll {
-    width: 110px;
-    height: 92px;
+    width: min(230px, 100%);
+    height: 150px;
+    margin: 0 auto;
   }
 
   .final-type-doll img {
-    width: 58px;
-    height: 58px;
+    width: 72px;
+    height: 72px;
   }
 
   .final-type-card > div:not(.final-type-doll) {
-    text-align: left;
+    text-align: center;
   }
 
   .final-type-card p {
     position: static;
     grid-column: 1 / -1;
     width: auto;
+    max-width: 100%;
     opacity: 1;
     transform: none;
     box-shadow: none;
     background: rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
   }
 
   .final-type-card p::before {
@@ -7991,8 +8029,15 @@ button {
   }
 
   .game-avatar {
-    transform: translate(-50%, -100%) scale(0.82);
+    width: 54px;
+    height: 54px;
+    transform: translate(-50%, -100%) scale(0.72);
     transform-origin: bottom center;
+  }
+
+  .game-avatar img {
+    width: 66px;
+    height: 66px;
   }
 
   .avatar-bubble {
@@ -8015,8 +8060,26 @@ button {
   }
 
   .avatar-at-3 {
-    left: 88%;
-    top: 13%;
+    left: 76%;
+    top: 24%;
+  }
+
+  .report-live-switcher {
+    position: relative;
+    top: auto;
+    width: min(100% - 32px, 420px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    padding: 6px;
+    border-radius: 999px;
+    margin-top: 0;
+    margin-bottom: 22px;
+  }
+
+  .report-live-switcher a {
+    min-height: 38px;
+    font-size: 14px;
+    line-height: 1;
   }
 
   .stage-reward-heading {

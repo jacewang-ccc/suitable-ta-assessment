@@ -158,19 +158,23 @@ export default function ReportClient() {
     return <EmptyReport />;
   }
 
-  const topInsights = report.preview.insights.slice(0, 3);
   const fullReport = report.fullReport;
   const roleLine = report.stageReports.map((stage) => stage.archetype.name).join(" + ");
 
   return (
     <main className="page-shell flow-page report-page">
       <div className="container">
-        <header className="report-hero">
+        <nav className="report-sample-switcher report-live-switcher" aria-label="报告内容导航">
+          <a href="#stage-report-sample">阶段报告</a>
+          <a href="#complete-report">最终报告</a>
+        </nav>
+
+        <header className="report-hero report-hero-single">
           <div className="report-hero-copy">
             <Link className="report-back-link" href="/">
               适合我的 TA
             </Link>
-            <span className="report-kicker">奥德赛关系报告</span>
+            <span className="report-kicker">完整关系说明书</span>
             <h1>奥德赛关系说明书</h1>
             <p>{report.preview.oneLine}</p>
             <div className="report-hero-role-grid" aria-label="四阶段角色组合">
@@ -193,33 +197,11 @@ export default function ReportClient() {
               </button>
             </div>
           </div>
-
-          <aside className="report-score-card role-passport-card">
-            <span>四阶段角色护照</span>
-            {report.stageReports.map((stage) => (
-              <a href={`#stage-${stage.layer}`} key={stage.layer}>
-                <RoleSticker name={stage.archetype.name} />
-                <section>
-                  <strong>{stage.archetype.name}</strong>
-                  <small>{stage.reportTitle}</small>
-                </section>
-              </a>
-            ))}
-          </aside>
         </header>
-
-        <section className="report-preview-grid" aria-label="基础洞察">
-          {topInsights.map((insight, index) => (
-            <article key={insight} className="report-insight-card">
-              <span>洞察 {String(index + 1).padStart(2, "0")}</span>
-              <p>{insight}</p>
-            </article>
-          ))}
-        </section>
 
         <div className="report-layout report-layout-single">
           <div className="report-main">
-            <section className="stage-sample-section report-stage-sample-live" aria-label="四份阶段报告">
+            <section className="stage-sample-section report-stage-sample-live" id="stage-report-sample" aria-label="四份阶段报告">
               <div className="report-type-banner report-type-banner-stage">
                 <span>报告类型 01</span>
                 <strong>阶段报告样例：一共 4 份，每完成一个阶段先拿到一份</strong>
