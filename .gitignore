@@ -4,6 +4,7 @@ dist/
 coverage/
 output/
 .playwright-mcp/
+.netlify/
 .env
 .env.local
 _private_docs/

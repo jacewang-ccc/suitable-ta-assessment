@@ -1,106 +1,144 @@
-# 适合我的 TA
+# Odyssey Compass
 
-面向 20 多岁奥德赛时期年轻人的关系自画像测评 Demo。
+English | [中文版本](./README.zh-CN.md)
 
-这个项目通过 68 道结构化问题与开放题，帮助用户先理解自己的性格底色、三观排序、亲密模式和理想伴侣偏好，再生成 4 份阶段报告与 1 份最终关系说明书。
+Chinese name: **适合我的 TA**
 
-## 在线 Demo
+An AI-assisted relationship self-discovery assessment demo for young adults navigating their post-graduation Odyssey years.
 
-[https://suitable-ta-assessment.vercel.app](https://suitable-ta-assessment.vercel.app)
+The product uses structured questions and open-ended prompts to help users better understand their personality foundations, values, intimacy patterns, and ideal partner profile. It then generates four stage reports and one final relationship guide.
 
-## 项目定位
+## Live Demo
 
-很多年轻人在进入亲密关系前，并不完全清楚自己是什么样的人、真正重视什么、适合什么样的长期关系。本项目试图把“自我认知”和“理想伴侣识别”结合起来，用轻量测评和报告生成的方式，让用户获得一份可阅读、可讨论、可行动的关系说明书。
+- Vercel: [https://suitable-ta-assessment.vercel.app](https://suitable-ta-assessment.vercel.app)
+- Netlify: [https://suitable-ta-assessment.netlify.app](https://suitable-ta-assessment.netlify.app)
 
-目标用户：
+Note: Vercel access may be less stable from mainland China, so the Netlify deployment is provided as an alternate mirror.
 
-- 20 多岁，处在职业、城市、关系探索期的人
-- 想更了解自己的三观、性格和亲密关系模式的人
-- 希望更清楚识别理想伴侣与关系风险的人
+## Background
 
-## 核心功能
+Many people in their twenties enter a period of uncertainty after leaving school and starting work. They are no longer following a clear academic path, and suddenly need to make their own decisions about career, city, lifestyle, relationships, and long-term partnership. This stage is often described as the "Odyssey years."
 
-- 首页产品介绍
-- 68 道标准版问卷
-- 选择题、排序题、量表题、开放题
-- 一键演示填完，方便快速查看完整流程
-- 4 份阶段报告
-  - 自我画像报告
-  - 价值罗盘报告
-  - 亲密模式报告
-  - 理想伴侣报告
-- 1 份最终关系说明书
-- 奥德赛角色贴纸与角色图鉴
-- 本地保存、返回首页、分享报告入口
+Odyssey Compass combines self-discovery and partner-fit exploration into a lightweight assessment experience. The goal is to turn vague relationship uncertainty into a readable, discussable, and actionable personal relationship guide.
 
-## 技术栈
+## Why This Matters
 
-- Next.js
-- React
-- TypeScript
-- CSS
-- lucide-react
-- localStorage
+- **Self-understanding without a clear method**: Young adults often want to understand what they like, what they value, and what kind of life they want, but few tools guide them through that reflection in a structured way.
+- **Relationship choices without clear criteria**: Many users are not simply looking for a relationship. They are trying to understand what kind of relationship they want and what kind of partner would actually fit them.
+- **Relatable content without next steps**: Social platforms have plenty of content about the Odyssey years and post-graduation anxiety, but most of it stops at emotional resonance rather than helping users decide what to do next.
 
-## 本地运行
+## Gaps in Existing Products
+
+- **Labels without depth**: Personality tests, dating tests, and MBTI-style products often give users a type label, but rarely explain values, partner standards, real-life constraints, or long-term compatibility in enough depth.
+- **Limited actionability**: Many assessments answer "what type am I?", but do not go far enough into "why am I like this?", "what kind of relationship fits me?", or "what should I do next?"
+
+## Product Approach
+
+The assessment is structured around four stages:
+
+- **Self Foundation**: Who am I? Personality foundations, energy patterns, and decision style.
+- **Value Compass**: What do I value? Life priorities, values, money views, and family boundaries.
+- **Intimacy Pattern**: What kind of intimacy do I want? Security needs, boundaries, communication, and repair style.
+- **Ideal Partner**: Who fits me? Partner traits, real-life conditions, and relationship risks.
+
+The question design combines rule-based and open-ended inputs:
+
+- Multiple-choice, ranking, and scale questions produce stable scores, type signals, and stage archetypes.
+- Open-ended questions capture the user's own language and personal context, leaving room for future AI-powered personalization.
+- The final report goes beyond labels by adding explanations, risk signals, and next-step suggestions.
+
+## Core Features
+
+- Landing page with product positioning
+- 68-question assessment
+- Single-choice, multiple-choice, ranking, scale, and open-ended questions
+- One-click demo fill for quickly walking through the full flow
+- Four stage reports: Self Foundation, Value Compass, Intimacy Pattern, Ideal Partner
+- One final relationship guide
+- Odyssey-inspired role stickers and role atlas
+- Local answer saving, return-home flow, and share entry point
+- Sample report page
+
+## Current Implementation
+
+The current version implements a complete demo loop:
+
+Home -> Assessment -> Demo fill -> Generate report -> Stage reports -> Final relationship guide.
+
+The implementation currently uses frontend rules, report templates, sample signals, and localStorage. Open-ended AI analysis is represented as a product structure and roadmap direction; a future version can connect to a real AI API for semantic analysis and personalized report generation.
+
+## Current Tech Stack
+
+This repository currently uses:
+
+- **Next.js / React** for pages and interactions
+- **TypeScript** for type safety
+- **CSS** for custom styling
+- **lucide-react** for icons
+- **localStorage** for local answer, draft, and report state
+- **Vitest** for unit tests
+
+The current version does not include a backend, database, payment flow, or real AI API integration.
+
+## Running Locally
 
 ```bash
 npm install
 npm run dev -- --port 3001
 ```
 
-打开：
+Open:
 
 ```text
 http://127.0.0.1:3001
 ```
 
-构建检查：
+## Tests and Build
 
 ```bash
+npm run test
 npm run build
 ```
 
-## 演示流程
+## Project Structure
 
-1. 打开首页。
-2. 点击「免费开始测评」。
-3. 在测评页点击「演示填完」。
-4. 点击「生成报告」。
-5. 查看 4 份阶段报告和最终关系说明书。
+```text
+app/
+  page.tsx                    Home page
+  assessment/                 Assessment page
+  report/                     Report page
+  report-samples/             Sample report page
+lib/
+  assessment/                 Question bank, types, scoring logic
+  report/                     Sample answers, report templates, report generation
+tests/                        Unit tests
+public/role-stickers/         Odyssey role sticker assets
+```
 
-## MVP 边界
+## Demo Flow
 
-当前版本是可体验的前端 MVP，重点是跑通从测评到报告的完整主流程。
+1. Open the home page.
+2. Click "免费开始测评".
+3. On the assessment page, click "演示填完".
+4. Click "生成报告".
+5. Review the four stage reports and the final relationship guide.
 
-暂不包含：
+## MVP Trade-offs
 
-- 真实登录
-- 真实数据库
-- 真实支付
-- 后台管理
-- 真实 AI API 调用
+- **Validate the core loop first**: The current version focuses on the path from answering questions to receiving a report and suggestions, rather than expanding into accounts, community, or historical profiles too early.
+- **Keep it as lightweight self-discovery**: The product is positioned as a relationship self-portrait and reflection tool, not as a clinical psychology assessment or professional counseling product.
+- **Keep report generation stable**: Structured questions and rule-based scoring provide stable outputs, while open-ended answers and AI are reserved for deeper personalization.
+- **Leave room for monetization later**: Paid unlocks, user accounts, history, share links, and real AI analysis are treated as later-stage extensions.
 
-这些能力会作为正式版 Roadmap 设计，而不是当前前端 MVP 的必要范围。
+## Roadmap
 
-## 正式版 Roadmap
+- Add Supabase for user answers, report results, and history
+- Connect DeepSeek V4 Pro for open-ended semantic analysis and personalized report generation
+- Add login, report history, and shareable report links
+- Add Stripe for paid full-report or deep-reading unlocks
+- Generate PDF relationship guides
+- Improve mobile experience for in-app browsers such as WeChat
 
-- 接入 Supabase 或 Neon Postgres 存储用户答案和报告结果
-- 接入 OpenAI API 或 Vercel AI SDK 做开放题语义分析
-- 接入 Stripe 做完整报告付费解锁
-- 增加登录、历史报告和分享链接
-- 生成 PDF 报告
-- 增加移动端微信内浏览器专项适配
+## Notes
 
-## AI Coding 说明
-
-本项目使用 AI Coding 协作完成产品拆解、问卷设计、报告结构、前端实现、UI 迭代和部署准备。开发过程中重点练习：
-
-- 把模糊产品想法拆成 MVP
-- 通过多轮反馈迭代 UI 和交互
-- 用样例数据模拟真实报告
-- 将早期产品想法收敛成可体验的线上 Demo
-
-## 说明
-
-当前公开仓库保留可运行 Demo、核心源码和测试用例。问卷映射、报告规则与后续商业化方案属于产品设计工作文档，暂不放入公开仓库。
+This public repository keeps the runnable demo, core source code, and tests. Detailed question mappings, report rules, and future commercialization plans are treated as product design work-in-progress and are not included in the public repository.
