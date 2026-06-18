@@ -1,6 +1,6 @@
 # Odyssey Compass
 
-English | [中文版本](./README.zh-CN.md)
+[中文版 README](./README.zh-CN.md) | Click the link on the left to open the Chinese README.
 
 Chinese name: **适合我的 TA**
 

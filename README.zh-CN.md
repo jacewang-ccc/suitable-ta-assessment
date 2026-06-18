@@ -1,6 +1,6 @@
 # 适合我的 TA
 
-[English](./README.md) | 中文版本
+[English version README](./README.md) | 点击左侧进入英文版 README。
 
 面向 20 多岁奥德赛时期年轻人的 AI 关系自画像测评 Demo。
 
