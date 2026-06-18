@@ -7559,6 +7559,18 @@ button {
     border-radius: 14px;
   }
 
+  .final-type-card:hover,
+  .final-type-card:focus-within {
+    transform: none;
+    box-shadow: 0 14px 36px rgba(46, 38, 30, 0.08);
+  }
+
+  .final-type-card:hover p,
+  .final-type-card:focus-within p {
+    opacity: 1;
+    transform: none;
+  }
+
   .final-type-card p::before {
     display: none;
   }
@@ -7572,6 +7584,7 @@ button {
     min-height: 104px;
     grid-template-columns: 92px minmax(0, 1fr);
     align-items: center;
+    overflow: hidden;
   }
 
   .role-sticker-card img {
@@ -7579,8 +7592,52 @@ button {
     height: 92px;
   }
 
+  .role-sticker-card:hover,
+  .role-sticker-card:focus,
+  .role-sticker-card:focus-within {
+    outline: none;
+    transform: translateY(-2px);
+    border-color: rgba(31, 107, 104, 0.22);
+    box-shadow: 0 14px 34px rgba(46, 38, 30, 0.1);
+  }
+
+  .role-sticker-card:hover img,
+  .role-sticker-card:focus img,
+  .role-sticker-card:focus-within img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 12px 12px rgba(46, 38, 30, 0.14));
+  }
+
   .role-sticker-card p {
+    position: static;
+    grid-column: 1 / -1;
+    width: auto;
+    max-width: 100%;
+    max-height: 0;
+    margin: 0;
+    padding: 0 12px;
+    opacity: 0;
+    overflow: hidden;
+    transform: none;
+    border-radius: 12px;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.76);
+    transition:
+      max-height 180ms ease,
+      opacity 160ms ease,
+      padding 180ms ease;
+  }
+
+  .role-sticker-card p::before {
     display: none;
+  }
+
+  .role-sticker-card:hover p,
+  .role-sticker-card:focus p,
+  .role-sticker-card:focus-within p {
+    max-height: 96px;
+    padding: 10px 12px;
+    opacity: 1;
   }
 
   .role-atlas-heading strong {

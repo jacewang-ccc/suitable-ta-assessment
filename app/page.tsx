@@ -549,6 +549,7 @@ export default function HomePage() {
                         featuredRoleNames.has(role.name) ? "is-featured" : ""
                       }`}
                       key={role.name}
+                      tabIndex={0}
                     >
                       <img src={role.image} alt={`${role.name}角色贴纸`} />
                       <div>
