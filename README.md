@@ -32,9 +32,9 @@ Odyssey Compass combines self-discovery and partner-fit exploration into a light
 - **Labels without depth**: Personality tests, dating tests, and MBTI-style products often give users a type label, but rarely explain values, partner standards, real-life constraints, or long-term compatibility in enough depth.
 - **Limited actionability**: Many assessments answer "what type am I?", but do not go far enough into "why am I like this?", "what kind of relationship fits me?", or "what should I do next?"
 
-## Product Approach
+## How It Works
 
-The assessment is structured around four stages:
+To help users move from vague self-reflection to a relationship guide they can understand, discuss, and act on, the assessment is structured around four stages:
 
 - **Self Foundation**: Who am I? Personality foundations, energy patterns, and decision style.
 - **Value Compass**: What do I value? Life priorities, values, money views, and family boundaries.
